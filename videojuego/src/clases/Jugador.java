@@ -4,40 +4,20 @@ import implementacion.Juego;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-public class Jugador {
-private int x;
-private int y;
+public class Jugador extends ItemJuego{
+
 private int vidas;
-private int velocidad=10;
-private String nombreImagen;
-public Jugador(int x, int y, int vidas, String nombreImagen) {
-	super();
-	this.x = x;
-	this.y = y;
+
+
+
+public Jugador(int x, int y, int velocidad, String nombreImagen, int vidas) {
+	super(x, y, velocidad, nombreImagen);
 	this.vidas = vidas;
-	this.nombreImagen = nombreImagen;
-
 }
 
 
-public int getX() {
-	return x;
-}
 
 
-public void setX(int x) {
-	this.x = x;
-}
-
-
-public int getY() {
-	return y;
-}
-
-
-public void setY(int y) {
-	this.y = y;
-}
 
 
 public int getVidas() {
@@ -50,21 +30,17 @@ public void setVidas(int vidas) {
 }
 
 
-public String getNombreImagen() {
-	return nombreImagen;
-}
 
 
-public void setNombreImagen(String nombreImagen) {
-	this.nombreImagen = nombreImagen;
-}
-
-
+@Override 
 public void pintar(GraphicsContext graficos) {
 	graficos.drawImage(Juego.imagenes.get(nombreImagen),x,y);
-};
+}
+@Override 
 public void mover() {
 	if (x > 840)
+		x=0;
+	if(x<0)
 		x=0;
 	if(Juego.derecha)
 	x+=velocidad;
@@ -77,12 +53,6 @@ public void mover() {
 }
 
 
-public int getVelocidad() {
-	return velocidad;
+
 }
 
-
-public void setVelocidad(int velocidad) {
-	this.velocidad = velocidad;
-}
-}
