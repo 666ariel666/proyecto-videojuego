@@ -1,0 +1,8 @@
+ariel: 0.0
+juan:  20.0
+albertano:  500.0
+ariel:  500.0
+ariel:  500.0
+pedrin:  0.0
+pedrin:  0.0
+juariñho:  500.0
